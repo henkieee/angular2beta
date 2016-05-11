@@ -1,0 +1,17 @@
+<h1>Tester de testt!!!!</h1>
+<p>{{ justTesting + justTesting }}</p>
+<button (click)="activate()">clicks</button>
+
+<ul>
+    <li *ngFor='let name of names; let i = index'>
+        <h4 *ngIf="! edit">{{ name }}</h4>
+        <span *ngIf="edit">
+            <input type="text" [(ngModel)]="names[i]"/>
+            <br />
+            <button (click)="saveName(i, names[i])">Opslaan</button>
+        </span>
+    </li>
+</ul>
+<div>
+    <button *ngIf="! edit" (click)="edit = true;">Wijzigen</button>
+</div>
